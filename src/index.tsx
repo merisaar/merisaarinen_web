@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import 'rsuite/styles/index.less';
 import { Grommet } from 'grommet';
+import './index.css';
 
 ReactDOM.render(
   <Grommet plain>
@@ -19,18 +20,15 @@ ReactDOM.render(
         <Route path="/users">
           {/* <Users /> */}
         </Route>
+        <Route path="/projects">
+          {/* <Users /> */}
+        </Route>
         <Route path="/">
           {/* <Home /> */}
         </Route>
       </Switch>
       <Header>
-        <Navbar appearance="default">
-          <Nav>
-            <Nav.Item icon={<Admin />}><Link to="/">Home</Link></Nav.Item>
-            <Nav.Item><Link to="/about">About</Link></Nav.Item>
-            <Nav.Item><Link to="/users">Users</Link></Nav.Item>
-          </Nav>
-        </Navbar>
+
       </Header>
       <StartPage />
     </Router>

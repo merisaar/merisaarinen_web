@@ -1,0 +1,56 @@
+:root {
+    --first-accent-color: #171719;
+    --second-accent-color: #975050;
+    --first-main-color: #F7D6D6;
+    --second-main-color: #FEEE;
+}
+
+.flex-container {
+    display: flex;
+    align-items: stretch;
+    height: 100vh;
+}
+.flex-item {
+    flex-grow: 1; 
+}
+.left-info-block {
+    background-color: var(--first-main-color);
+}
+.main-left-container {
+    flex-grow:1;
+    background-color: var(--first-main-color);   
+}
+.main-right-container {
+    flex-grow:1;
+    background-color: var(--second-accent-color);   
+}
+.startpage-column-container {
+    flex-direction: column;
+}
+.main-title {
+    color: var(--first-accent-color);
+    font-size: 550%;
+    font-weight: bold;
+}
+.secondary-title {
+    font-size: 120%;
+}
+.left-text-container {
+    align-content: center;
+}
+#show-projects-link {
+    margin-top: 7%;
+    font-weight: bold;
+}
+.left-text-container a {
+    color: inherit;
+    text-decoration: none;
+}
+.startpage-image {
+    background-image: url("./Resources/startpage-image.jpg")
+}
+.half-image {
+    object-fit: cover;
+    width: 100%;
+    height: -webkit-fill-available;
+}
