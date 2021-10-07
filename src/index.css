@@ -1,8 +1,9 @@
 :root {
-    --first-accent-color: #171719;
+    --text-color: #171719;
+    --first-accent-color: #610909;
     --second-accent-color: #975050;
     --first-main-color: #F7D6D6;
-    --second-main-color: #FEEE;
+    --second-main-color: #ba7d7d;
 }
 
 .flex-container {
@@ -25,22 +26,24 @@
     background-color: var(--second-accent-color);   
 }
 .startpage-column-container {
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 .main-title {
-    color: var(--first-accent-color);
+    color: var(--text-color);
     font-size: 550%;
     font-weight: bold;
 }
 .secondary-title {
     font-size: 120%;
 }
-.left-text-container {
-    align-content: center;
-}
 #show-projects-link {
     margin-top: 7%;
     font-weight: bold;
+}
+.left-text-container {
+    margin-top: -30%;
 }
 .left-text-container a {
     color: inherit;
@@ -53,4 +56,13 @@
     object-fit: cover;
     width: 100%;
     height: -webkit-fill-available;
+}
+.social-media-link-container {
+    bottom: 2%;
+    width: 18%;
+    height: 8%;
+    border-radius: 0px 46px 46px 0px;
+    background-color: var(--first-accent-color);
+    position: fixed;
+    left:0;
 }
