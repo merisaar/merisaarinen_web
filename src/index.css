@@ -4,6 +4,7 @@
     --second-accent-color: #975050;
     --first-main-color: #F7D6D6;
     --second-main-color: #ba7d7d;
+    --link-background-color: #E6E6E8;
 }
 
 .flex-container {
@@ -45,7 +46,7 @@
 .left-text-container {
     margin-top: -30%;
 }
-.left-text-container a {
+.main-left-container a {
     color: inherit;
     text-decoration: none;
 }
@@ -65,4 +66,22 @@
     background-color: var(--first-accent-color);
     position: fixed;
     left:0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2%;
+    gap:10px;
+}
+.social-media-link {
+    background-color: var(--link-background-color);
+    color: var(--text-color);
+    width: 20%;
+    height: 60%; 
+    border-radius: 50px 50px 50px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-media-link-container .fa {
+    color: var(--text-color);
 }
