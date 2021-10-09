@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { StartPage } from './Main/StartPage';
+import { MainPage } from './Main/MainPage';
 import { Container, Header, Footer, Navbar, Nav, Dropdown } from 'rsuite';
 import { Admin } from '@rsuite/icons';
 import {
@@ -30,7 +30,7 @@ ReactDOM.render(
       <Header>
 
       </Header>
-      <StartPage />
+      <MainPage />
     </Router>
     <Footer></Footer>
   </Grommet>,
