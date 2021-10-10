@@ -16,10 +16,11 @@ export const MainPage = (): any => {
                             </p>
                         </div>
                         <div className="secondary-title flex-item">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            <p>I am a software developer that loves trying out new technologies</p>
+                            <p>and solving problems through code.</p>
                         </div>
                         <div id="startpage-link">
-                            <Link to="/projects">
+                            <Link to="/about">
                                 More about me <i className="fa fa-arrow-right"></i>
                             </Link>
                         </div>
