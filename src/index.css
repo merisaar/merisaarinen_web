@@ -94,15 +94,20 @@
     display: flex;
     justify-content: space-around;
     width: 75%;
+    height: 10%
 }
 .navigation-bar .rs-navbar-item:hover {
     background-color: var(--second-accent-color);
     opacity: 50%;
     text-decoration: none;
     color:var(--first-main-color);
+    border-radius: 10px;
 }
 .navigation-bar .rs-navbar-right {
     display: flex;
     justify-content: flex-end;
     width: 25%;
+}
+.nav-button-active {
+    background-color: var(--second-accent-color);
 }

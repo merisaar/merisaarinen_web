@@ -1,32 +1,55 @@
-import { Icon } from '@rsuite/icons';
-import React, { useState, useEffect, FunctionComponent, ReactComponentElement, ReactElement } from 'react';
-import { Nav, Navbar, Placeholder } from 'rsuite';
-import {
-    Link
-} from "react-router-dom";
+import React, { useState } from 'react';
+import { Nav, Navbar } from 'rsuite';
+import { Link } from 'react-router-dom';
 
 export const MainPage = (): any => {
-    const { Paragraph } = Placeholder;
+    const [active, setActive] = useState(true);
     return (
         <>
             <div className="flex-container">
                 <div className="main-left-container startpage-column-container">
                     <div className="mesh-net"></div>
                     <div className="left-text-container">
-                        <div className="main-title flex-item"><p>Hello.<br></br>I am Meri.</p></div>
-                        <div className="secondary-title flex-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                        <div id="startpage-link"><Link to="/projects">More about me <i className="fa fa-arrow-right"></i></Link></div>
+                        <div className="main-title flex-item">
+                            <p>
+                                Hello.<br></br>I am Meri.
+                            </p>
+                        </div>
+                        <div className="secondary-title flex-item">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </div>
+                        <div id="startpage-link">
+                            <Link to="/projects">
+                                More about me <i className="fa fa-arrow-right"></i>
+                            </Link>
+                        </div>
                     </div>
                     <div className="social-media-link-container">
-                        <a href="https://github.com/merisaar" className="social-media-link" target="_blank"><i className="fa fa-github"></i></a>
-                        <a className="social-media-link" href="https://www.linkedin.com/in/meri-saarinen-321b95138/" target="_blank"><i className="fa fa-linkedin"></i></a>
+                        <a
+                            href="https://github.com/merisaar"
+                            className="social-media-link"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <i className="fa fa-github"></i>
+                        </a>
+                        <a
+                            className="social-media-link"
+                            href="https://www.linkedin.com/in/meri-saarinen-321b95138/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <i className="fa fa-linkedin"></i>
+                        </a>
                     </div>
                 </div>
                 <div className="main-right-container">
                     <div>
                         <Navbar className="navigation-bar" appearance="subtle">
                             <Nav>
-                                <Nav.Item eventKey="1">Home</Nav.Item>
+                                <Nav.Item eventKey="1" className={active ? 'nav-button-active' : ''}>
+                                    Home
+                                </Nav.Item>
                                 <Nav.Item eventKey="2">CV</Nav.Item>
                                 <Nav.Item eventKey="3">Work history</Nav.Item>
                                 <Nav.Item eventKey="4">Projects</Nav.Item>
@@ -35,12 +58,10 @@ export const MainPage = (): any => {
                                 <Nav.Item>Settings</Nav.Item>
                             </Nav>
                         </Navbar>
-
                     </div>
-                    <img className="half-image" src="../Resources/startpage-image.jpg"></img>
+                    <img className="half-image" src="../Resources/startpage-image.jpg" alt=""></img>
                 </div>
             </div>
-
         </>
-    )
-}
+    );
+};
