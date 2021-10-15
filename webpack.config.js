@@ -8,7 +8,6 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
     },
-    mode: 'development',
     module: {
         rules: [
             {
@@ -34,11 +33,7 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                use: [
-                    "style-loader",
-                    "css-loader",
-                    "less-loader",
-                ],
+                use: ['style-loader', 'css-loader', 'less-loader'],
             },
         ],
     },
@@ -57,5 +52,13 @@ module.exports = {
         hot: true,
         compress: true,
         open: true,
+        contentBase: './build',
+        allowedHosts: [
+            'localhost',
+            'merisaarinen.tech',
+            '.azurewebsites.net',
+            'merisaarinen-web.azurewebsites.net',
+            'merisaarinen-portfolio.azurewebsites.net',
+        ],
     },
-}
+};
