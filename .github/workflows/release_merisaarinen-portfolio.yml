@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://merisaarinenwebimage.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_d8087f6e6883452ab34a3601a349cfa9 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_8439115932fe423ab60fafbab6a882dd }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_67ef49e734d74a1297e13108f7704fe8 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_9d0f5c27a762430ea3f19e0990201850 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: merisaarinenwebimage.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d8087f6e6883452ab34a3601a349cfa9 }}/web-application-release:${{ github.sha }}
+        tags: merisaarinenwebimage.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_67ef49e734d74a1297e13108f7704fe8 }}/merisaarinenwebimage/web-application-release:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'merisaarinen-portfolio'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_7d25348b9b34458f921bfebad744dcf5 }}
-        images: 'merisaarinenwebimage.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d8087f6e6883452ab34a3601a349cfa9 }}/web-application-release:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_37c965c27dc9457096696d5f4fc611e0 }}
+        images: 'merisaarinenwebimage.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_67ef49e734d74a1297e13108f7704fe8 }}/merisaarinenwebimage/web-application-release:${{ github.sha }}'
