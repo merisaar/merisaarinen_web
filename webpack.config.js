@@ -52,7 +52,6 @@ module.exports = {
         hot: true,
         compress: true,
         open: true,
-        contentBase: './build',
         allowedHosts: [
             'localhost',
             'merisaarinen.tech',
