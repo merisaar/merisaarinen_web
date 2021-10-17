@@ -8,7 +8,7 @@ import './Styling/common.less';
 import { UnderWorkPage } from './General_components/UnderWorkPage';
 
 ReactDOM.render(
-    <Grommet plain>
+    <>
         <Router>
             <Switch>
                 <Route exact path="/about">
@@ -20,6 +20,6 @@ ReactDOM.render(
             </Switch>
         </Router>
         <Footer></Footer>
-    </Grommet>,
+    </>,
     document.getElementById('root'),
 );
