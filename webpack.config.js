@@ -54,7 +54,7 @@ module.exports = {
         open: true,
         allowedHosts: [
             'localhost',
-            'merisaarinen.tech',
+            '.merisaarinen.tech',
             'merisaarinen-web.azurewebsites.net',
         ],
     },
