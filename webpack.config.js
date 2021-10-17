@@ -8,6 +8,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
     },
+    mode: 'development',
     module: {
         rules: [
             {
@@ -52,10 +53,6 @@ module.exports = {
         hot: true,
         compress: true,
         open: true,
-        allowedHosts: [
-            'localhost',
-            '.merisaarinen.tech',
-            'merisaarinen-web.azurewebsites.net',
-        ],
+        allowedHosts: ['localhost', '.merisaarinen.tech', 'merisaarinen-web.azurewebsites.net'],
     },
 };
