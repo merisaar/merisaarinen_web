@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Nav, Navbar } from 'rsuite';
 import { Link } from 'react-router-dom';
+import '../Styling/start_page.less';
 
 export const MainPage = (): any => {
     const [active, setActive] = useState(true);

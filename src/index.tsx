@@ -4,8 +4,7 @@ import { MainPage } from './Main/MainPage';
 import { Footer } from 'rsuite';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'rsuite/styles/index.less';
-import { Grommet } from 'grommet';
-import './index.css';
+import './Styling/common.less';
 import { UnderWorkPage } from './General_components/UnderWorkPage';
 
 ReactDOM.render(
