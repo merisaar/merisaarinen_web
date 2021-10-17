@@ -10,7 +10,7 @@ export const MainPage = (): any => {
             <div className="flex-container">
                 <div className="main-left-container startpage-column-container">
                     <div className="mesh-net"></div>
-                    <div className="left-text-container">
+                    <div className="left-text-container fade-in-text-container">
                         <div className="main-title flex-item">
                             <p>
                                 Hello.<br></br>I am Meri.
@@ -20,7 +20,7 @@ export const MainPage = (): any => {
                             <p>I am a software developer that loves trying out new technologies</p>
                             <p>and solving problems through code.</p>
                         </div>
-                        <div id="startpage-link">
+                        <div className="startpage-link">
                             <Link to="/about">
                                 More about me <i className="fa fa-arrow-right"></i>
                             </Link>
