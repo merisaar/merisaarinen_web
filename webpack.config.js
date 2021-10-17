@@ -34,11 +34,7 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                use: [
-                    "style-loader",
-                    "css-loader",
-                    "less-loader",
-                ],
+                use: ['style-loader', 'css-loader', 'less-loader'],
             },
         ],
     },
@@ -57,5 +53,6 @@ module.exports = {
         hot: true,
         compress: true,
         open: true,
+        allowedHosts: ['localhost', '.merisaarinen.tech', 'merisaarinen-web.azurewebsites.net'],
     },
-}
+};
