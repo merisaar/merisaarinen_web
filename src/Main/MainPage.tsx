@@ -8,13 +8,19 @@ export const MainPage = (): any => {
         <div className="flex-container">
             <div className="main-left-container startpage-column-container">
                 <Switch>
-                    <Route exact path="/">
+                    <Route exact path="/home">
                         {<Home />}
                     </Route>
-                    <Route path="/about">{<UnderWorkPage />}</Route>
-                    <Route path="/users">{<UnderWorkPage />}</Route>
-                    <Route path="/projects">{<UnderWorkPage />}</Route>
-                    <Redirect path="*" to="/" />
+                    <Route exact path="/about">
+                        {<UnderWorkPage />}
+                    </Route>
+                    <Route exact path="/users">
+                        {<UnderWorkPage />}
+                    </Route>
+                    <Route exact path="/projects">
+                        {<UnderWorkPage />}
+                    </Route>
+                    <Redirect path="*" to="/home" />
                 </Switch>
             </div>
             <div className="main-right-container">
