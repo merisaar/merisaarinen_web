@@ -1,45 +1,51 @@
-import React, { useState, Dispatch, SetStateAction } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Nav, Navbar } from 'rsuite';
 import '../Styling/navigation-bar.less';
+import { Link, useLocation } from 'react-router-dom';
 
-export const NavigationBar = (): any => {
-    const homeComponent = { title: 'Home', type: 'home' };
-    const aboutMeComponent = { title: 'About me', type: 'aboutMe' };
-    const workHistoryComponent = { title: 'Work history', type: 'workHistory' };
-    const projectsComponent = { title: 'Projects', type: 'projects' };
-    const contactMeComponent = { title: 'Contact me', type: 'ContactMe' };
-    const [activeNav, setActiveNav] = useState(homeComponent.type);
+export const NavigationBar = (): JSX.Element => {
+    const homeComponent = { title: 'Home', link: '/home' };
+    const aboutMeComponent = { title: 'About me', link: '/about' };
+    const workHistoryComponent = { title: 'Work history', link: '/work' };
+    const projectsComponent = { title: 'Projects', link: '/projects' };
+    const contactMeComponent = { title: 'Contact me', link: '/contact' };
+    const location = useLocation();
+    const [activeNav, setActiveNav] = useState(location.pathname);
+
+    useEffect(() => {
+        setActiveNav(location.pathname);
+    }, [location]);
 
     return (
         <>
-            <Navbar className="navigation-bar" appearance="subtle">
+            <Navbar id="navigation-bar" appearance="subtle">
                 <Nav>
                     <NavItem
-                        setActiveNav={setActiveNav}
                         title={homeComponent.title}
-                        isActive={activeNav == homeComponent.type}
+                        isActive={activeNav == homeComponent.link}
+                        linkName={homeComponent.link}
                     ></NavItem>
                     <NavItem
-                        setActiveNav={setActiveNav}
                         title={aboutMeComponent.title}
-                        isActive={activeNav == aboutMeComponent.type}
+                        isActive={activeNav == aboutMeComponent.link}
+                        linkName={aboutMeComponent.link}
                     ></NavItem>
                     <NavItem
-                        setActiveNav={setActiveNav}
                         title={workHistoryComponent.title}
-                        isActive={activeNav == workHistoryComponent.type}
+                        isActive={activeNav == workHistoryComponent.link}
+                        linkName={workHistoryComponent.link}
                     ></NavItem>
                     <NavItem
-                        setActiveNav={setActiveNav}
                         title={projectsComponent.title}
-                        isActive={activeNav == projectsComponent.type}
+                        isActive={activeNav == projectsComponent.link}
+                        linkName={projectsComponent.link}
                     ></NavItem>
                 </Nav>
                 <Nav pullRight>
                     <NavItem
-                        setActiveNav={setActiveNav}
                         title={contactMeComponent.title}
-                        isActive={activeNav == contactMeComponent.type}
+                        isActive={activeNav == contactMeComponent.link}
+                        linkName={contactMeComponent.link}
                     ></NavItem>
                 </Nav>
             </Navbar>
@@ -50,8 +56,12 @@ export const NavigationBar = (): any => {
 interface INavItemProps {
     title: string;
     isActive?: boolean;
-    setActiveNav: Dispatch<SetStateAction<string>>;
+    linkName: string;
 }
 const NavItem = (prop: INavItemProps): JSX.Element => {
-    return <Nav.Item className={prop.isActive ? 'nav-button-active' : ''}>{prop.title}</Nav.Item>;
+    return (
+        <Nav.Item className={prop.isActive ? 'nav-button-active' : ''}>
+            <Link to={prop.linkName}>{prop.title}</Link>
+        </Nav.Item>
+    );
 };
