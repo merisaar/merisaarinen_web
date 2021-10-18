@@ -2,23 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { MainPage } from './Main/MainPage';
 import { Footer } from 'rsuite';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import 'rsuite/styles/index.less';
 import './Styling/common.less';
-import { UnderWorkPage } from './General_components/UnderWorkPage';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
-    <>
-        <Router>
-            <Switch>
-                <Route path="/about">{<UnderWorkPage />}</Route>
-                <Route path="/users">{<UnderWorkPage />}</Route>
-                <Route path="/projects">{<UnderWorkPage />}</Route>
-                <Route path="/">{<MainPage />}</Route>
-                <Redirect path="*" to="/" />
-            </Switch>
-        </Router>
+    <Router>
+        <MainPage></MainPage>
         <Footer></Footer>
-    </>,
+    </Router>,
     document.getElementById('root'),
 );
