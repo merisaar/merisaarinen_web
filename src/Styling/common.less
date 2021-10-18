@@ -20,22 +20,16 @@
     background-color: @second-accent-color;
     width: 50%;
 }
-.main-left-container a {
+.flex-container a {
     color: inherit;
     text-decoration: none;
+}
+.main-left-container p, .main-left-container h1, .main-left-container a, .main-left-container .fa {
+    color: @text-color;
 }
 
 .half-image {
     object-fit: cover;
     width: 100%;
     height: 100%;
-}
-@media screen and (max-width: 540px) {
-    .navigation-bar div {
-        width: 50%;
-        flex-direction: column;
-    }
-    .navigation-bar .rs-navbar-right {
-        width: 50%;
-    }
 }

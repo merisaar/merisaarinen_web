@@ -1,11 +1,11 @@
 @import 'common-variables.less';
-.navigation-bar {
+#navigation-bar {
     position: absolute;
     top: 0;
     justify-content: space-around;
     width: 50%;
 }
-.navigation-bar div {
+#navigation-bar div {
     flex-direction: row;
     display: flex;
     justify-content: space-around;
@@ -13,19 +13,28 @@
     height: 10%;
     text-align: center;
 }
-.navigation-bar .rs-navbar-item:hover {
+#navigation-bar .rs-navbar-item:hover {
     background-color: @second-accent-color;
     opacity: 50%;
     text-decoration: none;
     color:@first-main-color;
     border-radius: 10px;
 }
-.navigation-bar .rs-navbar-right {
+#navigation-bar .rs-navbar-right {
     display: flex;
     justify-content: flex-end;
     width: 25%;
 }
-.nav-button-active {
+.rs-navbar-item.nav-button-active {
     background-color: @second-accent-color;
     border-radius: 10px;
+}
+@media screen and (max-width: 540px) {
+    .navigation-bar div {
+        width: 50%;
+        flex-direction: column;
+    }
+    .navigation-bar .rs-navbar-right {
+        width: 50%;
+    }
 }
