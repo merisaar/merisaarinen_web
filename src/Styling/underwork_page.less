@@ -1,10 +1,10 @@
 @import 'common-variables.less';
-.underwork-page{
+.underwork-page-left{
     height: 100vh;
 }
     
  
-.underwork-page .middle {
+.underwork-page-left .middle {
     position: absolute;
     top: 50%;
     left: 25%;
@@ -13,27 +13,41 @@
     text-align: center;
 }
   
-.underwork-page h1 {
+.underwork-page-left h1 {
   font-size: 500%;
   position: absolute;
     right: 25%;
     top: 0px;
 }
 
-.underwork-page img {
+.underwork-page-left img {
   width: 125px;
   position: absolute;
   right: 15%;
   top: -50px;
 }
+
 .back-icon-container {
-  font-size: 400%;
+  font-size: 300%;
   position: fixed;
   left: 2%;
   top: 2%;
 }
-@media screen and (max-width: 540px) {
-  .underwork-page .middle {
+
+@media all and (max-width: 675px) {
+  .underwork-page-left .middle {
     transform: initial;
+    width: initial;
+    left: 50%;
+    right: 25%;
+
+
+  }
+  .underwork-page-right img {
+    display: none;
+  }
+  .underwork-page-left img {
+    right: auto;
+    top: auto;
   }
 }

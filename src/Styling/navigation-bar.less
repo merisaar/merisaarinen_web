@@ -2,6 +2,7 @@
 #navigation-bar {
     position: absolute;
     top: 0;
+    right:0;
     justify-content: space-around;
     width: 50%;
 }
@@ -30,11 +31,24 @@
     border-radius: 10px;
 }
 @media screen and (max-width: 540px) {
-    .navigation-bar div {
-        width: 50%;
-        flex-direction: column;
+    #navigation-bar div {
+        width: 100%;
     }
-    .navigation-bar .rs-navbar-right {
+    #navigation-bar a a {
+        color: @text-color;
+    }
+    #navigation-bar a.nav-button-active a {
+        color: @text-color-light;
+    }
+    #navigation-bar .rs-navbar-right {
         width: 50%;
+    }
+    #navigation-bar {
+        width: 100%
+    }
+    .back-icon-container {
+        bottom: 0;
+        left: 0;
+        top: auto;
     }
 }

@@ -6,7 +6,7 @@ import { Link, useLocation } from 'react-router-dom';
 export const NavigationBar = (): JSX.Element => {
     const homeComponent = { title: 'Home', link: '/home' };
     const aboutMeComponent = { title: 'About me', link: '/about' };
-    const workHistoryComponent = { title: 'Work history', link: '/work' };
+    const workHistoryComponent = { title: 'Work history', link: '/workhistory' };
     const projectsComponent = { title: 'Projects', link: '/projects' };
     const contactMeComponent = { title: 'Contact me', link: '/contact' };
     const location = useLocation();
