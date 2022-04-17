@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Styling/underwork_page.less';
 import robot from '../Resources/robot-hammering.gif';
-export const UnderWorkPage = (): any => {
+export const UnderWorkPage = (): JSX.Element => {
     return (
         <div className="underwork-page">
             <div className="back-icon-container">

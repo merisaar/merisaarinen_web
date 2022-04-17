@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../Styling/home.less';
+import '../../../Styling/home.less';
 
-export const Home = (): any => {
+export const Home = (): JSX.Element => {
     return (
         <>
             <div className="mesh-net"></div>
