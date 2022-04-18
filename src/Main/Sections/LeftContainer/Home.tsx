@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../Styling/home.less';
+import '../../../Styling/home.less';
 
-export const Home = (): any => {
-    const [loaded, setLoaded] = useState(false);
+export const Home = (): JSX.Element => {
     return (
         <>
             <div className="main-left-container startpage-column-container">
@@ -42,15 +41,6 @@ export const Home = (): any => {
                         <i className="fa fa-linkedin"></i>
                     </a>
                 </div>
-            </div>
-            <div className="main-right-container">
-                <img
-                    className="half-image"
-                    style={loaded ? {} : { display: 'none' }}
-                    src="../Resources/startpage-image.jpg"
-                    onLoad={() => setLoaded(true)}
-                    alt=""
-                />
             </div>
         </>
     );

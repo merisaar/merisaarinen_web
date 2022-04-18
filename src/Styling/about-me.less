@@ -1,0 +1,29 @@
+@import 'common-variables.less';
+
+.about-me-container {
+    position: absolute;
+    top: 15%;
+    margin: 5%;
+    color: @text-color
+}
+.about-me-right-container {
+    position: relative;
+    top: 25%;
+    left: 15%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+.half-image-circle {
+    // position: relative;
+    // top: 25%;
+    // left: 25%;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 15%;
+    object-fit: cover;
+}
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.3); }

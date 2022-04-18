@@ -1,7 +1,7 @@
 import React from 'react';
-import '../Styling/underwork_page.less';
+import '../Styling/underwork-page.less';
 import robot from '../Resources/robot-hammering.gif';
-export const UnderWorkPage = (): any => {
+export const UnderWorkPage = (): JSX.Element => {
     return (
         <>
             <div className="main-left-container startpage-column-container">
@@ -16,9 +16,6 @@ export const UnderWorkPage = (): any => {
                         <img src={robot} alt=""></img>
                     </div>
                 </div>
-            </div>
-            <div className="main-right-container underwork-page-right">
-                <img className="half-image" src="../Resources/startpage-image.jpg" alt="" />
             </div>
         </>
     );
