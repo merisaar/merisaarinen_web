@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styling/underwork_page.less';
+import '../Styling/underwork-page.less';
 import robot from '../Resources/robot-hammering.gif';
 export const UnderWorkPage = (): JSX.Element => {
     return (

@@ -22,19 +22,6 @@ export const Home = (): JSX.Element => {
                     </Link>
                 </div>
             </div>
-            <div className="social-media-link-container">
-                <a href="https://github.com/merisaar" className="social-media-link" target="_blank" rel="noreferrer">
-                    <i className="fa fa-github"></i>
-                </a>
-                <a
-                    className="social-media-link"
-                    href="https://www.linkedin.com/in/meri-saarinen-321b95138/"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <i className="fa fa-linkedin"></i>
-                </a>
-            </div>
         </>
     );
 };
