@@ -15,7 +15,7 @@ export const MainPage = (): JSX.Element => {
                 <Routes>
                     <Route path="/home" element={<Home />}></Route>
                     <Route path="/about" element={<AboutMeLeft />}></Route>
-                    <Route path="/work" element={<UnderWorkPage />}></Route>
+                    <Route path="/workhistory" element={<UnderWorkPage />}></Route>
                     <Route path="/projects" element={<UnderWorkPage />}></Route>
                     <Route path="/contact" element={<UnderWorkPage />}></Route>
                     <Route path="*" element={<Home />}></Route>
