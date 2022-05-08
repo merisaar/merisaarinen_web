@@ -20,7 +20,7 @@ export const NavigationBar = (): JSX.Element => {
 
     return (
         <>
-            <Breakpoint large down>
+            <Breakpoint medium down>
                 <Navbar id="navigation-bar" appearance="subtle">
                     {NavigationItems(
                         homeComponent,
@@ -59,7 +59,7 @@ interface INavItemProps {
 const NavItem = (prop: INavItemProps): JSX.Element => {
     return (
         <Link to={prop.linkName}>
-            <Breakpoint large down>
+            <Breakpoint medium down>
                 {prop.icon}
             </Breakpoint>
             <li className={prop.isActive ? 'nav-button-active' : ''}>

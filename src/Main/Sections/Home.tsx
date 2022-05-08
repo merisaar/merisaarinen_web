@@ -7,37 +7,41 @@ import { Breakpoint } from 'react-socks';
 export const Home = (): JSX.Element => {
     return (
         <>
-            <div className="main-left-container startpage-column-container">
-                <div className="mesh-net"></div>
-                <div className="left-text-container fade-in-text-container">
-                    <div className="main-title flex-item">
-                        <p>
-                            Hello.<br></br>I am Meri.
-                        </p>
-                    </div>
-                    <div className="secondary-title flex-item">
-                        <Breakpoint large down>
-                            <p>
-                                I am a software developer that loves trying out new technologies and solving problems
-                                through code.
-                            </p>
-                        </Breakpoint>
-                        <Breakpoint large up>
-                            <p>I am a software developer that loves trying out new technologies</p>
-                            <p>and solving problems through code.</p>
-                        </Breakpoint>
-                    </div>
-                    <div className="startpage-link">
-                        <Link to="/about">
-                            More about me <i className="fa fa-arrow-right"></i>
-                        </Link>
-                    </div>
+            <Breakpoint className="autoflow justify-content-center align-items-center" medium down>
+                <div className="main-home-container">
+                    <HalfImage imagePath="../Resources/startpage-image.jpg" />
                 </div>
-            </div>
+                <HomeTextContainer />
+            </Breakpoint>
+            <Breakpoint className="autoflow full-width" large up>
+                <HomeTextContainer />
 
-            <div className="main-right-container">
-                <HalfImage imagePath="../Resources/startpage-image.jpg" />
-            </div>
+                <div className="main-home-container">
+                    <HalfImage imagePath="../Resources/startpage-image.jpg" />
+                </div>
+            </Breakpoint>
         </>
     );
 };
+
+const HomeTextContainer = (): JSX.Element => (
+    <div className="left-text-container fade-in-text-container">
+        <div className="main-title flex-item">
+            <p>
+                Hello.<br></br>I am Meri.
+            </p>
+        </div>
+        <Breakpoint lassName="secondary-title flex-item" medium down>
+            <p>I am a software developer that loves trying out new technologies and solving problems through code.</p>
+        </Breakpoint>
+        <Breakpoint lassName="secondary-title flex-item" large up>
+            <p>I am a software developer that loves trying out new technologies</p>
+            <p>and solving problems through code.</p>
+        </Breakpoint>
+        <div className="startpage-link">
+            <Link to="/about">
+                More about me <i className="fa fa-arrow-right"></i>
+            </Link>
+        </div>
+    </div>
+);

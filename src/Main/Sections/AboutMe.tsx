@@ -1,21 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../Styling/about-me.less';
+import { Breakpoint } from 'react-socks';
 
-export const AboutMeLeftComponent = (): JSX.Element => {
+export const AboutMeComponent = (): JSX.Element => {
     return (
-        <div className="autoflow">
-            <div className="main-left-container">
-                <AboutMeTextContainer />
-            </div>
-            <div className="main-right-container">
+        <>
+            <Breakpoint className="autoflow" medium down>
                 <ImageContainer />
-            </div>
-        </div>
+                <AboutMeTextContainer />
+            </Breakpoint>
+            <Breakpoint className="autoflow" large up>
+                <div className="main-left-container">
+                    <AboutMeTextContainer />
+                </div>
+                <div className="main-right-container">
+                    <ImageContainer />
+                </div>
+            </Breakpoint>
+        </>
     );
 };
 
-const ImageContainer = () => (
+export const ImageContainer = () => (
     <div className="about-me-image-container">
         <img className="half-image-circle grow" src="../Resources/startpage-image.jpg" alt="" />
         <p className="italic">This is me. Proudly and gently holding my degree so I don't break it.</p>
@@ -25,7 +32,7 @@ const ImageContainer = () => (
 const AboutMeTextContainer = () => {
     return (
         <div className="about-me-container">
-            <div className="main-title flex-item dark">
+            <div className="secondary-title flex-item dark">
                 <p>About me</p>
             </div>
             <p>
