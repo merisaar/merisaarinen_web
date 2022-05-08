@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Nav, Navbar } from 'rsuite';
 import '../Styling/navigation-bar.less';
 import { Link, useLocation } from 'react-router-dom';
+import { Breakpoint } from 'react-socks';
+import { Nav, Navbar } from 'rsuite';
+import { BiHomeAlt, BiUser, BiHistory, BiChalkboard, BiInfoCircle } from 'react-icons/bi';
 
 export const NavigationBar = (): JSX.Element => {
     const homeComponent = { title: 'Home', link: '/home' };
@@ -18,37 +20,32 @@ export const NavigationBar = (): JSX.Element => {
 
     return (
         <>
-            <Navbar id="navigation-bar" appearance="subtle">
-                <Nav>
-                    <NavItem
-                        title={homeComponent.title}
-                        isActive={activeNav == homeComponent.link}
-                        linkName={homeComponent.link}
-                    ></NavItem>
-                    <NavItem
-                        title={aboutMeComponent.title}
-                        isActive={activeNav == aboutMeComponent.link}
-                        linkName={aboutMeComponent.link}
-                    ></NavItem>
-                    <NavItem
-                        title={workHistoryComponent.title}
-                        isActive={activeNav == workHistoryComponent.link}
-                        linkName={workHistoryComponent.link}
-                    ></NavItem>
-                    <NavItem
-                        title={projectsComponent.title}
-                        isActive={activeNav == projectsComponent.link}
-                        linkName={projectsComponent.link}
-                    ></NavItem>
-                </Nav>
-                <Nav pullRight>
-                    <NavItem
-                        title={contactMeComponent.title}
-                        isActive={activeNav == contactMeComponent.link}
-                        linkName={contactMeComponent.link}
-                    ></NavItem>
-                </Nav>
-            </Navbar>
+            <Breakpoint large down>
+                <Navbar id="navigation-bar" appearance="subtle">
+                    {NavigationItems(
+                        homeComponent,
+                        activeNav,
+                        aboutMeComponent,
+                        workHistoryComponent,
+                        projectsComponent,
+                        contactMeComponent,
+                    )}
+                </Navbar>
+            </Breakpoint>
+            <Breakpoint large up>
+                <div id="navigation-bar">
+                    <ul>
+                        {NavigationItems(
+                            homeComponent,
+                            activeNav,
+                            aboutMeComponent,
+                            workHistoryComponent,
+                            projectsComponent,
+                            contactMeComponent,
+                        )}
+                    </ul>
+                </div>
+            </Breakpoint>
         </>
     );
 };
@@ -57,11 +54,60 @@ interface INavItemProps {
     title: string;
     isActive?: boolean;
     linkName: string;
+    icon?: JSX.Element;
 }
 const NavItem = (prop: INavItemProps): JSX.Element => {
     return (
-        <Nav.Item className={prop.isActive ? 'nav-button-active' : ''}>
-            <Link to={prop.linkName}>{prop.title}</Link>
-        </Nav.Item>
+        <Link to={prop.linkName}>
+            <Breakpoint large down>
+                {prop.icon}
+            </Breakpoint>
+            <li className={prop.isActive ? 'nav-button-active' : ''}>
+                <p>{prop.title}</p>
+            </li>
+        </Link>
+    );
+};
+const NavigationItems = (
+    homeComponent: { title: string; link: string },
+    activeNav: string,
+    aboutMeComponent: { title: string; link: string },
+    workHistoryComponent: { title: string; link: string },
+    projectsComponent: { title: string; link: string },
+    contactMeComponent: { title: string; link: string },
+) => {
+    return (
+        <Nav>
+            <NavItem
+                title={homeComponent.title}
+                isActive={activeNav == homeComponent.link}
+                linkName={homeComponent.link}
+                icon={<BiHomeAlt />}
+            ></NavItem>
+            <NavItem
+                title={aboutMeComponent.title}
+                isActive={activeNav == aboutMeComponent.link}
+                linkName={aboutMeComponent.link}
+                icon={<BiUser />}
+            ></NavItem>
+            <NavItem
+                title={workHistoryComponent.title}
+                isActive={activeNav == workHistoryComponent.link}
+                linkName={workHistoryComponent.link}
+                icon={<BiHistory />}
+            ></NavItem>
+            <NavItem
+                title={projectsComponent.title}
+                isActive={activeNav == projectsComponent.link}
+                linkName={projectsComponent.link}
+                icon={<BiChalkboard />}
+            ></NavItem>
+            <NavItem
+                title={contactMeComponent.title}
+                isActive={activeNav == contactMeComponent.link}
+                linkName={contactMeComponent.link}
+                icon={<BiInfoCircle />}
+            ></NavItem>
+        </Nav>
     );
 };

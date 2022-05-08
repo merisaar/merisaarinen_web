@@ -1,9 +1,28 @@
 import React from 'react';
-import aboutMeText from '../../../Resources/about-me.txt';
 import { Link } from 'react-router-dom';
-import '../../../Styling/about-me.less';
+import '../../Styling/about-me.less';
 
 export const AboutMeLeftComponent = (): JSX.Element => {
+    return (
+        <div className="autoflow">
+            <div className="main-left-container">
+                <AboutMeTextContainer />
+            </div>
+            <div className="main-right-container">
+                <ImageContainer />
+            </div>
+        </div>
+    );
+};
+
+const ImageContainer = () => (
+    <div className="about-me-image-container">
+        <img className="half-image-circle grow" src="../Resources/startpage-image.jpg" alt="" />
+        <p className="italic">This is me. Proudly and gently holding my degree so I don't break it.</p>
+    </div>
+);
+
+const AboutMeTextContainer = () => {
     return (
         <div className="about-me-container">
             <div className="main-title flex-item dark">

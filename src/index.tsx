@@ -5,11 +5,14 @@ import { Footer } from 'rsuite';
 import 'rsuite/styles/index.less';
 import './Styling/common.less';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { BreakpointProvider } from 'react-socks';
 
 ReactDOM.render(
     <Router>
-        <MainPage></MainPage>
-        <Footer></Footer>
+        <BreakpointProvider>
+            <MainPage></MainPage>
+            <Footer></Footer>
+        </BreakpointProvider>
     </Router>,
     document.getElementById('root'),
 );

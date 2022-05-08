@@ -1,18 +1,17 @@
 @import 'common-variables.less';
 
 .about-me-container {
-    position: absolute;
+    position: relative;
     top: 15%;
     margin: 5%;
-    color: @text-color
+    color: @text-color;
 }
-.about-me-right-container {
-    position: relative;
+.about-me-image-container {
+    position: absolute;
     top: 25%;
-    left: 15%;
+    left: 40%;
     width: 60%;
     display: flex;
-    align-items: center;
     flex-flow: column;
 }
 .half-image-circle {
@@ -25,5 +24,50 @@
     margin-bottom: 15%;
     object-fit: cover;
 }
-.grow { transition: all .2s ease-in-out; }
-.grow:hover { transform: scale(1.3); }
+
+.grow {
+    transition: all 0.2s ease-in-out;
+}
+.grow:hover {
+    transform: scale(1.3);
+}
+
+@media screen and (min-width: 540px) {
+    .about-me-image-container {
+        align-items: center;
+    }
+    .startpage-column-container {
+        display: flex;
+    }
+}
+@media screen and (max-width: 540px) {
+    .half-image-circle {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        margin-bottom: 15%;
+        object-fit: cover;
+    }
+    .about-me-image-container {
+        display: flex;
+        position: relative;
+        top: 15%;
+        width: 100%;
+        left: -50%;
+    }
+    .about-me-container {
+        position: relative;
+        left: 25%;
+        width: 150%;
+        top: 35%;
+        margin: 0;
+        padding-bottom: 5%;
+    }
+    .main-right-container {
+        display: flex;
+        position: relative;
+    }
+    .main-left-container {
+        position: relative;
+    }
+}
