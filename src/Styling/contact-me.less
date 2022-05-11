@@ -1,0 +1,86 @@
+@import 'common-variables.less';
+
+.contact-info-container {
+    left: 10%;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    gap: 3vmin;
+}
+.contact-info {
+    display: flex;
+    position: relative;
+    top: 20%;
+    gap: 10%;
+}
+.contact-info-text {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.contact-info-icon-container {
+    background-color: @link-background-color;
+    color: @text-color;
+    width: 15vmin;
+    height: 15vmin;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 150%;
+}
+.contact-info-icon-container {
+    font-size: 7vmin;
+}
+div .mbsc-comp.mbsc-page {
+    background: @first-main-color;
+}
+div .mbsc-mobiscroll.mbsc-btn {
+    background: @first-accent-color;
+}
+.mbsc-comp .mbsc-form-group .mbsc-form-group-title {
+    background: @second-main-color;
+}
+.mbsc-checkbox-contactMe.mbsc-mobiscroll .mbsc-checkbox-box {
+    background: @second-accent-color;
+}
+.mbsc-switch-contactMe.mbsc-ios.mbsc-switch input:checked + .mbsc-switch-track {
+    background: @second-accent-color;
+    border-color: @second-accent-color;
+}
+
+@media screen and (min-width: 767px) {
+    .mbsc-ltr .mbsc-form-group .mbsc-form-group-title {
+        color: @text-color;
+    }
+    .content-container {
+        flex-flow: row;
+        display: flex;
+        gap: 10vmin;
+        display: flex;
+        flex-flow: row;
+    }
+    .padding {
+        padding: 7vmin;
+    }
+}
+@media screen and (max-width: 767px) {
+    div .mbsc-form-group-title {
+        background: @second-main-color;
+    }
+    .mbsc-ltr .mbsc-form-group .mbsc-form-group-title {
+        color: @text-color;
+    }
+    .content-container {
+        top: 5%;
+        position: relative;
+        gap: 15%;
+        width: 100%;
+    }
+
+    // .contact-me-image-container {
+    //     position: absolute;
+    //     top: 10vmin;
+    //     left: 50vmin;
+    // }
+}

@@ -6,11 +6,11 @@ import { Breakpoint } from 'react-socks';
 export const AboutMeComponent = (): JSX.Element => {
     return (
         <>
-            <Breakpoint className="autoflow" medium down>
+            <Breakpoint className="autoflow" small down>
                 <ImageContainer />
                 <AboutMeTextContainer />
             </Breakpoint>
-            <Breakpoint className="autoflow" large up>
+            <Breakpoint className="autoflow" medium up>
                 <div className="main-left-container">
                     <AboutMeTextContainer />
                 </div>

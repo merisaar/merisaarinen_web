@@ -9,7 +9,7 @@ export const UnderWorkPage = (): JSX.Element => {
         <>
             <div className="main-left-container startpage-column-container">
                 <div className="underwork-page-left">
-                    <Breakpoint className="back-icon-container" large up>
+                    <Breakpoint className="back-icon-container" medium up>
                         <a href="/home">
                             <i className="fa fa-chevron-left"></i>
                         </a>
@@ -20,7 +20,7 @@ export const UnderWorkPage = (): JSX.Element => {
                     </div>
                 </div>
             </div>
-            <Breakpoint className="main-right-container" large up>
+            <Breakpoint className="main-right-container" medium up>
                 <HalfImage imagePath="../Resources/startpage-image.jpg" />
             </Breakpoint>
         </>

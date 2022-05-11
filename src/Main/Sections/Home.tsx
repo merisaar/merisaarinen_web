@@ -7,13 +7,13 @@ import { Breakpoint } from 'react-socks';
 export const Home = (): JSX.Element => {
     return (
         <>
-            <Breakpoint className="autoflow justify-content-center align-items-center" medium down>
+            <Breakpoint className="autoflow justify-content-center align-items-center" small down>
                 <div className="main-home-container">
                     <HalfImage imagePath="../Resources/startpage-image.jpg" />
                 </div>
                 <HomeTextContainer />
             </Breakpoint>
-            <Breakpoint className="autoflow full-width" large up>
+            <Breakpoint className="autoflow full-width" medium up>
                 <HomeTextContainer />
 
                 <div className="main-home-container">
@@ -31,10 +31,10 @@ const HomeTextContainer = (): JSX.Element => (
                 Hello.<br></br>I am Meri.
             </p>
         </div>
-        <Breakpoint lassName="secondary-title flex-item" medium down>
+        <Breakpoint lassName="secondary-title flex-item" small down>
             <p>I am a software developer that loves trying out new technologies and solving problems through code.</p>
         </Breakpoint>
-        <Breakpoint lassName="secondary-title flex-item" large up>
+        <Breakpoint lassName="secondary-title flex-item" medium up>
             <p>I am a software developer that loves trying out new technologies</p>
             <p>and solving problems through code.</p>
         </Breakpoint>

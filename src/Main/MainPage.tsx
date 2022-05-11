@@ -5,6 +5,7 @@ import { AboutMeComponent as AboutMe } from './Sections/AboutMe';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Home } from './Sections/Home';
 import { SocialMediaLinkContainer } from '../GeneralComponents/SocialMediaLinkContainer';
+import { ContactMeComponent } from './Sections/ContactMe';
 
 export const MainPage = (): JSX.Element => {
     return (
@@ -16,7 +17,7 @@ export const MainPage = (): JSX.Element => {
                     <Route path="/about" element={<AboutMe />}></Route>
                     <Route path="/workhistory" element={<UnderWorkPage />}></Route>
                     <Route path="/projects" element={<UnderWorkPage />}></Route>
-                    <Route path="/contact" element={<UnderWorkPage />}></Route>
+                    <Route path="/contact" element={<ContactMeComponent />}></Route>
                     <Route path="*" element={<Navigate to="/home" replace />} />
                 </Routes>
             </div>
