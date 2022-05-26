@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import '../Styling/navigation-bar.less';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Breakpoint } from 'react-socks';
 import { Nav, Navbar } from 'rsuite';
 import { BiHomeAlt, BiUser, BiHistory, BiChalkboard, BiInfoCircle } from 'react-icons/bi';
+import { HashLink } from 'react-router-hash-link';
 
 export const NavigationBar = (): JSX.Element => {
     const homeComponent = { title: 'Home', link: '/home' };
@@ -58,14 +59,14 @@ interface INavItemProps {
 }
 const NavItem = (prop: INavItemProps): JSX.Element => {
     return (
-        <Link to={prop.linkName}>
+        <HashLink to={prop.linkName}>
             <Breakpoint small down>
                 {prop.icon}
             </Breakpoint>
             <li className={prop.isActive ? 'nav-button-active' : ''}>
                 <p>{prop.title}</p>
             </li>
-        </Link>
+        </HashLink>
     );
 };
 const NavigationItems = (
