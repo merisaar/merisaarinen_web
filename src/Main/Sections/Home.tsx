@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import '../../Styling/home.less';
 import { HalfImage } from './HalfImage';
 import { Breakpoint } from 'react-socks';
@@ -39,9 +39,9 @@ const HomeTextContainer = (): JSX.Element => (
             <p>and solving problems through code.</p>
         </Breakpoint>
         <div className="startpage-link">
-            <Link to="/about">
+            <HashLink to="/about">
                 More about me <i className="fa fa-arrow-right"></i>
-            </Link>
+            </HashLink>
         </div>
     </div>
 );

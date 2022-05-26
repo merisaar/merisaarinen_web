@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import '../../Styling/about-me.less';
 import { Breakpoint } from 'react-socks';
 
@@ -53,9 +53,9 @@ const AboutMeTextContainer = () => {
                 <br></br>
                 <br></br>
                 To learn more about me and my interests,{' '}
-                <Link to="/contact">
+                <HashLink to="/contact">
                     reach out <i className="fa fa-arrow-right"></i>
-                </Link>
+                </HashLink>
             </p>
         </div>
     );
