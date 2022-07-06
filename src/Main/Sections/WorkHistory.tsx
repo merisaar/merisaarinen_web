@@ -4,93 +4,86 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import { MdOutlineWorkOutline, MdSchool } from 'react-icons/md';
 import { AiOutlineStar } from 'react-icons/ai';
 import 'react-vertical-timeline-component/style.min.css';
+import '../../Styling/common.less';
 
 export const WorkHistoryComponent = (): JSX.Element => {
+    const workColor = '#C42348';
+    const studyIconColor = '#E95D70';
+    const starColor = '#9B1C2F';
+    const lightAccentColor = '#fff';
     return (
         <>
             <VerticalTimeline>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"
-                    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                    contentStyle={{ background: workColor, color: lightAccentColor }}
+                    contentArrowStyle={{ borderRight: `7px solid  ${workColor}` }}
                     date="2019 - present"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                    iconStyle={{ background: workColor, color: lightAccentColor }}
                     icon={<MdOutlineWorkOutline />}
                 >
                     <h3 className="vertical-timeline-element-title">Solution developer</h3>
                     <h4 className="vertical-timeline-element-subtitle">If insurances</h4>
-                    <p>Fullstack, Scrum master</p>
+                    <p>Fullstack development with .NET and React/AngularJS, Scrum master</p>
                 </VerticalTimelineElement>
 
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"
-                    date="2019"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                    date="Summer 2019"
+                    iconStyle={{ background: workColor, color: lightAccentColor }}
                     icon={<MdOutlineWorkOutline />}
                 >
                     <h3 className="vertical-timeline-element-title">Software developer</h3>
                     <h4 className="vertical-timeline-element-subtitle">Lowell</h4>
-                    <p>Creative Direction, User Experience, Visual Design, SEO, Online Marketing</p>
+                    <p>Front-end development with React</p>
                 </VerticalTimelineElement>
 
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"
-                    date="2018"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                    date="Summer 2018"
+                    iconStyle={{ background: workColor, color: lightAccentColor }}
                     icon={<MdOutlineWorkOutline />}
                 >
                     <h3 className="vertical-timeline-element-title">Junior Software developer</h3>
                     <h4 className="vertical-timeline-element-subtitle">Lindorff</h4>
-                    <p>User Experience, Visual Design</p>
+                    <p>Fullstack development with Javascript and .NET</p>
                 </VerticalTimelineElement>
 
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"
                     date="2017"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                    iconStyle={{ background: workColor, color: lightAccentColor }}
                     icon={<MdOutlineWorkOutline />}
                 >
                     <h3 className="vertical-timeline-element-title">Trainee</h3>
                     <h4 className="vertical-timeline-element-subtitle">ABB</h4>
-                    <p>User Experience, Visual Design</p>
+                    <p>Data and program management</p>
                 </VerticalTimelineElement>
 
                 <VerticalTimelineElement
                     className="vertical-timeline-element--education"
-                    date="April 2013"
-                    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+                    date="2018-2021"
+                    iconStyle={{ background: studyIconColor, color: lightAccentColor }}
                     icon={<MdSchool />}
                 >
-                    <h3 className="vertical-timeline-element-title">
-                        Content Marketing for Web, Mobile and Social Media
-                    </h3>
-                    <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
-                    <p>Strategy, Social Media</p>
+                    <h3 className="vertical-timeline-element-title">Master of Science in Technology</h3>
+                    <h4 className="vertical-timeline-element-subtitle">Masters Degree</h4>
+                    <p>Software development, architecture and testing</p>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--education"
-                    date="November 2012"
-                    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+                    date="2015-2018"
+                    iconStyle={{ background: studyIconColor, color: lightAccentColor }}
                     icon={<MdSchool />}
                 >
-                    <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-                    <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-                    <p>Creative Direction, User Experience, Visual Design</p>
+                    <h3 className="vertical-timeline-element-title">Bachelors of Science (Technology)</h3>
+                    <h4 className="vertical-timeline-element-subtitle">
+                        Bachelor Degree in Information and Communication Technologies
+                    </h4>
+                    <p>Software development in practice and in theory</p>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
-                    className="vertical-timeline-element--education"
-                    date="2002 - 2006"
-                    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                    icon={<MdSchool />}
-                >
-                    <h3 className="vertical-timeline-element-title">
-                        Bachelor of Science in Interactive Digital Media Visual Imaging
-                    </h3>
-                    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
-                    <p>Creative Direction, Visual Design</p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                    iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
+                    iconStyle={{ background: starColor, color: lightAccentColor }}
                     icon={<AiOutlineStar />}
                 />
             </VerticalTimeline>
