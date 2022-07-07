@@ -4,8 +4,22 @@
     justify-content: center;
     align-items: flex-start;
     display: flex;
+    
 }
-
+.home-container{
+    background-color: @first-main-color;
+}
+#tsparticles {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+  }
+  
 .secondary-title {
     font-size: 120%;
 }
@@ -17,6 +31,9 @@
     margin-top: 25%;
     padding-left: 1%;
     padding-right: 1%;
+}
+.main-home-container {
+    z-index: 1;
 }
 @animation-time-seconds: 3s;
 .fade-in-text-container .secondary-title {
@@ -73,7 +90,8 @@
     .main-home-container {
         flex-grow: 0;
         position: relative;
-        top: 10%;
+        top: 10%;    
+
     }
     .left-text-container {
         padding-left: 10px;
