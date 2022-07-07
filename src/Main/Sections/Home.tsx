@@ -13,7 +13,7 @@ export const Home = (): JSX.Element => {
                 </div>
                 <HomeTextContainer />
             </Breakpoint>
-            <Breakpoint className="autoflow full-width" medium up>
+            <Breakpoint className="autoflow full-width home-container section" medium up>
                 <HomeTextContainer />
 
                 <div className="main-home-container">

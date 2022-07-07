@@ -10,7 +10,7 @@ export const AboutMeComponent = (): JSX.Element => {
                 <ImageContainer />
                 <AboutMeTextContainer />
             </Breakpoint>
-            <Breakpoint className="autoflow" medium up>
+            <Breakpoint className="autoflow section" medium up>
                 <div className="main-left-container">
                     <AboutMeTextContainer />
                 </div>
