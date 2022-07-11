@@ -16,14 +16,16 @@ export const ContactMeComponent = (): JSX.Element => {
                 <ContactInformationContainer />
                 <ContactContainer />
             </Breakpoint>
-            <Breakpoint className="autoflow align-items-center flex-flow-column padding section" medium up>
-                <ImageContainer />
-                <div className="content-container">
-                    <div className="main-left-container ">
-                        <ContactInformationContainer />
-                    </div>
-                    <div className="main-right-container">
-                        <ContactContainer />
+            <Breakpoint className="section" medium up>
+                <div className="autoflow align-items-center flex-flow-column padding" id="contact">
+                    <ImageContainer />
+                    <div className="content-container">
+                        <div className="main-left-container ">
+                            <ContactInformationContainer />
+                        </div>
+                        <div className="main-right-container">
+                            <ContactContainer />
+                        </div>
                     </div>
                 </div>
             </Breakpoint>
@@ -109,7 +111,7 @@ const ContactContainer = () => {
             );
     }
     return (
-        <div>
+        <>
             <Page>
                 <div className="mbsc-form-group">
                     <div className="mbsc-form-group-title">Contact me</div>
@@ -136,7 +138,7 @@ const ContactContainer = () => {
                     <span className="mbsc-err-msg">{submitError}</span>
                 </div>
             </Page>
-        </div>
+        </>
     );
 };
 

@@ -4,14 +4,15 @@ import { useLocation } from 'react-router-dom';
 import { Breakpoint } from 'react-socks';
 import { Nav, Navbar } from 'rsuite';
 import { BiHomeAlt, BiUser, BiHistory, BiChalkboard, BiInfoCircle } from 'react-icons/bi';
+import { Link } from 'react-scroll';
 import { HashLink } from 'react-router-hash-link';
 
 export const NavigationBar = (): JSX.Element => {
-    const homeComponent = { title: 'Home', link: '/home' };
-    const aboutMeComponent = { title: 'About me', link: '/about' };
-    const workHistoryComponent = { title: 'Work history', link: '/workhistory' };
-    const projectsComponent = { title: 'Projects', link: '/projects' };
-    const contactMeComponent = { title: 'Contact me', link: '/contact' };
+    const homeComponent = { title: 'Home', link: 'home' };
+    const aboutMeComponent = { title: 'About me', link: 'about' };
+    const workHistoryComponent = { title: 'Work history', link: 'workhistory' };
+    const projectsComponent = { title: 'Projects', link: 'projects' };
+    const contactMeComponent = { title: 'Contact me', link: 'contact' };
     const location = useLocation();
     const [activeNav, setActiveNav] = useState(location.pathname);
 
@@ -59,14 +60,23 @@ interface INavItemProps {
 }
 const NavItem = (prop: INavItemProps): JSX.Element => {
     return (
-        <HashLink to={prop.linkName}>
+        <>
             <Breakpoint small down>
-                {prop.icon}
+                <HashLink to={`/${prop.linkName}`}>
+                    {prop.icon}
+                    <li className={prop.isActive ? 'nav-button-active' : ''}>
+                        <p>{prop.title}</p>
+                    </li>
+                </HashLink>
             </Breakpoint>
-            <li className={prop.isActive ? 'nav-button-active' : ''}>
-                <p>{prop.title}</p>
-            </li>
-        </HashLink>
+            <Breakpoint medium up>
+                <Link activeClass="active" smooth spy to={prop.linkName}>
+                    <li>
+                        <p>{prop.title}</p>
+                    </li>
+                </Link>
+            </Breakpoint>
+        </>
     );
 };
 const NavigationItems = (

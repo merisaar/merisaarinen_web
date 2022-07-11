@@ -34,6 +34,7 @@ export const MainPage = (): JSX.Element => {
                 <AboutMe />
                 <WorkHistoryComponent />
                 <ContactMeComponent />
+                <NavigationBar />
             </Breakpoint>
         </>
     );

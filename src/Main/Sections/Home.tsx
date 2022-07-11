@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import '../../Styling/home.less';
 import { HalfImage } from './HalfImage';
@@ -13,11 +13,13 @@ export const Home = (): JSX.Element => {
                 </div>
                 <HomeTextContainer />
             </Breakpoint>
-            <Breakpoint className="autoflow full-width home-container section" medium up>
-                <HomeTextContainer />
+            <Breakpoint className="section" medium up>
+                <div id="home" className="autoflow full-width home-container">
+                    <HomeTextContainer />
 
-                <div className="main-home-container">
-                    <HalfImage imagePath="../Resources/startpage-image.jpg" />
+                    <div className="main-home-container">
+                        <HalfImage imagePath="../Resources/startpage-image.jpg" />
+                    </div>
                 </div>
             </Breakpoint>
         </>

@@ -10,12 +10,14 @@ export const AboutMeComponent = (): JSX.Element => {
                 <ImageContainer />
                 <AboutMeTextContainer />
             </Breakpoint>
-            <Breakpoint className="autoflow section" medium up>
-                <div className="main-left-container">
-                    <AboutMeTextContainer />
-                </div>
-                <div className="main-right-container">
-                    <ImageContainer />
+            <Breakpoint className="section" medium up>
+                <div className="autoflow" id="about">
+                    <div className="main-left-container">
+                        <AboutMeTextContainer />
+                    </div>
+                    <div className="main-right-container">
+                        <ImageContainer />
+                    </div>
                 </div>
             </Breakpoint>
         </>

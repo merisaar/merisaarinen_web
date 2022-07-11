@@ -12,7 +12,7 @@ export const WorkHistoryComponent = (): JSX.Element => {
     const starColor = '#9B1C2F';
     const lightAccentColor = '#fff';
     return (
-        <>
+        <div id="workhistory">
             <VerticalTimeline>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"
@@ -87,7 +87,7 @@ export const WorkHistoryComponent = (): JSX.Element => {
                     icon={<AiOutlineStar />}
                 />
             </VerticalTimeline>
-        </>
+        </div>
     );
 };
 
