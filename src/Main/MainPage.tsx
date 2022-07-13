@@ -7,6 +7,7 @@ import { Home } from './Sections/Home';
 import { SocialMediaLinkContainer } from '../GeneralComponents/SocialMediaLinkContainer';
 import { ContactMeComponent } from './Sections/ContactMe';
 import { WorkHistoryComponent } from './Sections/WorkHistory';
+import { Projects } from './Sections/Projects';
 import { Breakpoint } from 'react-socks';
 
 export const MainPage = (): JSX.Element => {
@@ -20,7 +21,7 @@ export const MainPage = (): JSX.Element => {
                             <Route path="/home" element={<Home />}></Route>
                             <Route path="/about" element={<AboutMe />}></Route>
                             <Route path="/workhistory" element={<WorkHistoryComponent />}></Route>
-                            <Route path="/projects" element={<UnderWorkPage />}></Route>
+                            <Route path="/projects" element={<Projects />}></Route>
                             <Route path="/contact" element={<ContactMeComponent />}></Route>
                             <Route path="*" element={<Navigate to="/home" replace />} />
                         </Routes>
@@ -33,6 +34,7 @@ export const MainPage = (): JSX.Element => {
                 <Home />
                 <AboutMe />
                 <WorkHistoryComponent />
+                <Projects />
                 <ContactMeComponent />
             </Breakpoint>
         </>
