@@ -1,4 +1,4 @@
-import React, { Children, ReactChildren, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../Styling/about-me.less';
 import { Breakpoint } from 'react-socks';
 import '../../Styling/contact-me.less';
@@ -93,22 +93,14 @@ const ContactContainer = () => {
         }
     };
     function sendEmail() {
-        const serviceID = process.env.SERVICE_ID;
-        const templateID = process.env.TEMPLATE_ID;
-
-        emailjs
-            .send(serviceID, templateID, {
-                message: message,
-                from_name: name,
-            })
-            .then(
-                function () {
-                    setEmailSent(true);
-                },
-                function () {
-                    setSubmitError('Something went wrong. Please try again.');
-                },
-            );
+        const body = { message: message, name: name };
+        fetch(`${process.env.BASE_URL}/sendEmail`, {
+            method: 'post',
+            body: JSON.stringify(body),
+            headers: { 'Content-Type': 'application/json' },
+        }).then(() => {
+            setEmailSent(true);
+        });
     }
     return (
         <>
