@@ -48,7 +48,7 @@ module.exports = (env) => {
         },
         plugins: [
             new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, './src/index.html'),
+                template: path.resolve(__dirname, `./${env.development ? 'src' : 'dist'}/index.html`),
             }),
             new CleanWebpackPlugin(),
             new Dotenv({ path: `./.env.${environment}` }),
