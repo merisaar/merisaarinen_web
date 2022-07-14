@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 import '../../Styling/home.less';
 import { HalfImage } from './HalfImage';
@@ -41,9 +41,11 @@ const HomeTextContainer = (): JSX.Element => (
             <p>and solving problems through code.</p>
         </Breakpoint>
         <div className="startpage-link">
-            <HashLink to="/about">
-                More about me <i className="fa fa-arrow-right"></i>
-            </HashLink>
+            <Breakpoint small down>
+                <HashLink to="/about">
+                    More about me <i className="fa fa-arrow-right"></i>
+                </HashLink>
+            </Breakpoint>
         </div>
     </div>
 );
