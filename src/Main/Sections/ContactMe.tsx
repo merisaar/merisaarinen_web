@@ -16,9 +16,7 @@ export const ContactMeComponent = (): JSX.Element => {
                 <ContactInformationContainer />
                 <ContactContainer />
             </Breakpoint>
-            <Breakpoint className="section" medium up>
-                <div className="autoflow align-items-center flex-flow-column padding" id="contact">
-                    <ImageContainer />
+                <Header title="Contact information"></Header>
                     <div className="content-container">
                         <div className="main-left-container ">
                             <ContactInformationContainer />

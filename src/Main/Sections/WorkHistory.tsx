@@ -13,7 +13,10 @@ export const WorkHistoryComponent = (): JSX.Element => {
     const lightAccentColor = '#fff';
     return (
         <div id="workhistory">
-            <VerticalTimeline>
+        <VerticalTimeline>
+            <Breakpoint medium up>
+                <Header title="Experience"></Header>
+            </Breakpoint>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"
                     contentStyle={{ background: workColor, color: lightAccentColor }}

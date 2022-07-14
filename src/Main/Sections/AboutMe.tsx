@@ -2,6 +2,7 @@ import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 import '../../Styling/about-me.less';
 import { Breakpoint } from 'react-socks';
+import { Header } from '../../GeneralComponents/Header';
 
 export const AboutMeComponent = (): JSX.Element => {
     return (
@@ -34,9 +35,7 @@ export const ImageContainer = () => (
 const AboutMeTextContainer = () => {
     return (
         <div className="about-me-container">
-            <div className="secondary-title flex-item dark">
-                <p>About me</p>
-            </div>
+            <Header title="About me"></Header>
             <p>
                 I love problem solving and finding solutions that fit best for the problem at hand. That is how I was
                 able to obtain my degree in Master of Science in Technology.
