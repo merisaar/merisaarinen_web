@@ -6,6 +6,9 @@
     position: relative;
     top: 25vmin;
 }
+.tertiary-title {
+    font-size: 250%;
+}
 .flex-container {
     display: flex;
     align-items: stretch;
@@ -21,9 +24,14 @@
     background-color: @first-main-color;
 }
 
-.flex-container a {
+.section a,
+.contact-info a,
+.autoflow a {
     color: inherit;
     text-decoration: none;
+}
+.light-background {
+    background: @first-main-color-light;
 }
 .italic {
     font-style: italic;
@@ -48,12 +56,16 @@
     height: 100%;
     width: 100%;
 }
+
 .section {
     height: 100vh;
     width: 100%;
 }
+.main-padding {
+    padding-left: 10%;
+    padding-right: 10%;
+}
 .autoflow {
-    overflow: auto;
     display: flex;
     width: 100%;
 }

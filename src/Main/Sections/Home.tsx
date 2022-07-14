@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 import '../../Styling/home.less';
 import { HalfImage } from './HalfImage';

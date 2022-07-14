@@ -28,14 +28,15 @@
         }
         li:hover {
             background-color: @second-accent-color;
+            cursor:pointer;
             p {
-                color: @text-color-light;
+                color: @text-color;
                 display: flex;
                 width: 600%;
                 position: relative;
                 left: -650%;
-                top: 5px;
-                justify-content: end;
+                top: 10px;
+                justify-content: flex-end;
             }
         }
         a {
@@ -73,6 +74,7 @@
         background-color: #610909;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+        z-index: 1;
         div {
             flex-direction: row;
             display: flex;

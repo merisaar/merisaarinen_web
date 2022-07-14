@@ -1,17 +1,19 @@
 @import 'common-variables.less';
 
+#contact {
+    width: 100%;
+}
 .contact-info-container {
-    left: 10%;
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     position: relative;
     gap: 3vmin;
+    justify-content: center;
 }
 .contact-info {
     display: flex;
     position: relative;
     top: 20%;
-    gap: 10%;
 }
 .contact-info-text {
     display: flex;
@@ -28,6 +30,7 @@
     justify-content: center;
     align-items: center;
     font-size: 150%;
+    margin-right: 5%;
 }
 .contact-info-icon-container {
     font-size: 7vmin;
@@ -36,8 +39,9 @@
 div .mbsc-mobiscroll.mbsc-btn {
     background: @first-accent-color;
 }
-.mbsc-comp .mbsc-form-group .mbsc-form-group-title {
+.mbsc-comp.mbsc-ltr .mbsc-form-group .mbsc-form-group-title {
     background: @second-main-color;
+    color: @text-color-light;
 }
 .mbsc-checkbox-contactMe.mbsc-mobiscroll .mbsc-checkbox-box {
     background: @second-accent-color;
@@ -52,14 +56,20 @@ div .mbsc-mobiscroll.mbsc-btn {
         color: @text-color;
     }
     .content-container {
-        flex-flow: row;
-        display: flex;
         gap: 10vmin;
         display: flex;
         flex-flow: row;
+        flex-direction: column;
     }
     .padding {
         padding: 7vmin;
+    }
+    .content-container .mbsc-mobiscroll.mbsc-page{
+        background: none;
+        width: 75vh;
+    }
+    .content-container .mbsc-material.mbsc-page {
+        background-color: none;
     }
 }
 @media screen and (max-width: 767px) {
@@ -72,13 +82,19 @@ div .mbsc-mobiscroll.mbsc-btn {
     .content-container {
         top: 5%;
         position: relative;
-        gap: 15%;
+        gap: 3vh;
         width: 100%;
+        display: flex;
+        flex-direction: column;
     }
-
-    // .contact-me-image-container {
-    //     position: absolute;
-    //     top: 10vmin;
-    //     left: 50vmin;
-    // }
+    .contact-info-container {
+        left: 10%;
+        flex-flow: column;
+    }
+    .contact-info {
+        gap: 10%;
+    }
+    .content-container .mbsc-material.mbsc-page {
+        background-color: @first-main-color;
+    }
 }

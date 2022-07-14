@@ -8,26 +8,26 @@ import '@mobiscroll/react-lite/dist/css/mobiscroll.min.css';
 import { Input, Page, Button, Textarea } from '@mobiscroll/react-lite';
 import ClipLoader from 'react-spinners/ClipLoader';
 import '../../Styling/common-variables.less';
+import { Header } from '../../GeneralComponents/Header';
 
 export const ContactMeComponent = (): JSX.Element => {
     return (
-        <>
+        <div id="contact">
             <Breakpoint className="content-container" small down>
                 <ContactInformationContainer />
                 <ContactContainer />
             </Breakpoint>
+            <Breakpoint className="section main-padding" medium up>
                 <Header title="Contact information"></Header>
+
+                <div className="autoflow align-items-center flex-flow-column padding">
                     <div className="content-container">
-                        <div className="main-left-container ">
-                            <ContactInformationContainer />
-                        </div>
-                        <div className="main-right-container">
-                            <ContactContainer />
-                        </div>
+                        <ContactInformationContainer />
+                        <ContactContainer />
                     </div>
                 </div>
             </Breakpoint>
-        </>
+        </div>
     );
 };
 export const ImageContainer = () => (

@@ -3,6 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 import '../../Styling/about-me.less';
 import { Breakpoint } from 'react-socks';
 import { Header } from '../../GeneralComponents/Header';
+import { Link } from 'react-scroll';
 
 export const AboutMeComponent = (): JSX.Element => {
     return (
@@ -11,7 +12,7 @@ export const AboutMeComponent = (): JSX.Element => {
                 <ImageContainer />
                 <AboutMeTextContainer />
             </Breakpoint>
-            <Breakpoint className="section" medium up>
+            <Breakpoint className="section main-padding" medium up>
                 <div className="autoflow" id="about">
                     <div className="main-left-container">
                         <AboutMeTextContainer />
@@ -54,9 +55,16 @@ const AboutMeTextContainer = () => {
                 <br></br>
                 <br></br>
                 To learn more about me and my interests,{' '}
-                <HashLink to="/contact">
-                    reach out <i className="fa fa-arrow-right"></i>
-                </HashLink>
+                <Breakpoint small down>
+                    <HashLink to="/contact">
+                        reach out <i className="fa fa-arrow-right"></i>
+                    </HashLink>
+                </Breakpoint>
+                <Breakpoint medium up>
+                    <Link to="contact">
+                        reach out <i className="fa fa-arrow-right"></i>
+                    </Link>
+                </Breakpoint>
             </p>
         </div>
     );

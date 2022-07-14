@@ -20,7 +20,7 @@ export const UnderWorkPage = (): JSX.Element => {
                     </div>
                 </div>
             </div>
-            <Breakpoint className="main-right-container section" medium up>
+            <Breakpoint className="main-right-container section main-padding" medium up>
                 <HalfImage imagePath="../Resources/startpage-image.jpg" />
             </Breakpoint>
         </>

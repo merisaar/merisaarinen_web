@@ -107,12 +107,12 @@ const NavigationItems = (
                 linkName={workHistoryComponent.link}
                 icon={<BiHistory />}
             ></NavItem>
-            <NavItem
+            {/* <NavItem
                 title={projectsComponent.title}
                 isActive={activeNav == projectsComponent.link}
                 linkName={projectsComponent.link}
                 icon={<BiChalkboard />}
-            ></NavItem>
+            ></NavItem> */}
             <NavItem
                 title={contactMeComponent.title}
                 isActive={activeNav == contactMeComponent.link}
