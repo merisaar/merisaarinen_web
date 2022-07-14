@@ -6,8 +6,9 @@
     "author": "Meri Saarinen",
     "license": "MIT",
     "scripts": {
-        "start": "webpack serve --env development --config webpack.config.js",
-        "build": "webpack --env production --config webpack.config.js",
+        "start": "webpack serve --env development --mode development --config webpack.config.js",
+        "start-prod": "webpack serve --env production --mode production --config webpack.config.js",
+        "build": "webpack --env production --mode production --config webpack.config.js",
         "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
         "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
     },

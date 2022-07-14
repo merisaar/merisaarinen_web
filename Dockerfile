@@ -11,4 +11,4 @@ COPY . ./
 
 EXPOSE 3000
 EXPOSE 80
-CMD ["yarn", "run start"]
+CMD ["yarn", "run start-prod"]
