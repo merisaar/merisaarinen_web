@@ -4,13 +4,14 @@ import '../../Styling/home.less';
 import { HalfImage } from './HalfImage';
 import { Breakpoint } from 'react-socks';
 import Particles from 'react-tsparticles';
+import image from '../../Resources/startpage-image.jpg';
 
 export const Home = (): JSX.Element => {
     return (
         <>
             <Breakpoint className="autoflow justify-content-center align-items-center" small down>
                 <div className="main-home-container">
-                    <HalfImage imagePath="../Resources/startpage-image.jpg" />
+                    <HalfImage image={image} />
                 </div>
                 <HomeTextContainer />
             </Breakpoint>
@@ -19,7 +20,7 @@ export const Home = (): JSX.Element => {
                     <HomeTextContainer />
 
                     <div className="main-home-container">
-                        <HalfImage imagePath="../Resources/startpage-image.jpg" />
+                        <HalfImage image={image} />
                     </div>
                 </div>
             </Breakpoint>

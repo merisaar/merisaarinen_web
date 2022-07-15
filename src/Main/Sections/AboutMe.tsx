@@ -4,6 +4,7 @@ import '../../Styling/about-me.less';
 import { Breakpoint } from 'react-socks';
 import { Header } from '../../GeneralComponents/Header';
 import { Link } from 'react-scroll';
+import image from '../../Resources/startpage-image.jpg';
 
 export const AboutMeComponent = (): JSX.Element => {
     return (
@@ -28,7 +29,7 @@ export const AboutMeComponent = (): JSX.Element => {
 
 export const ImageContainer = () => (
     <div className="about-me-image-container">
-        <img className="half-image-circle grow" src="../Resources/startpage-image.jpg" alt="" />
+        <img className="half-image-circle grow" src={image} alt="" />
         <p className="italic">This is me. Proudly and gently holding my degree so I don't break it.</p>
     </div>
 );

@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 
 interface HalfImageProps {
-    imagePath: string;
+    image: HTMLImageElement;
 }
 
-export const HalfImage = ({ imagePath }: HalfImageProps): JSX.Element => {
+export const HalfImage = ({ image }: HalfImageProps): JSX.Element => {
     const [loaded, setLoaded] = useState(false);
     return (
         <img
             className="half-image"
             style={loaded ? {} : { display: 'none' }}
-            src={imagePath}
+            src={image}
             onLoad={() => setLoaded(true)}
             alt=""
         />

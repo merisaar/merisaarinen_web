@@ -3,6 +3,7 @@ import '../Styling/underwork-page.less';
 import robot from '../Resources/robot-hammering.gif';
 import { HalfImage } from '../Main/Sections/HalfImage';
 import { Breakpoint } from 'react-socks';
+import image from '../Resources/startpage-image.jpg';
 
 export const UnderWorkPage = (): JSX.Element => {
     return (
@@ -21,7 +22,7 @@ export const UnderWorkPage = (): JSX.Element => {
                 </div>
             </div>
             <Breakpoint className="main-right-container section main-padding" medium up>
-                <HalfImage imagePath="../Resources/startpage-image.jpg" />
+                <HalfImage image={image} />
             </Breakpoint>
         </>
     );

@@ -30,11 +30,7 @@ export const ContactMeComponent = (): JSX.Element => {
         </div>
     );
 };
-export const ImageContainer = () => (
-    <div className="contact-me-image-container">
-        <img className="half-image-circle grow" src="../Resources/startpage-image.jpg" alt="" />
-    </div>
-);
+
 const ContactContainer = () => {
     const [name, setName] = useState('');
     const [nameError, setNameError] = useState('');
