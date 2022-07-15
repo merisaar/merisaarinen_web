@@ -48,7 +48,7 @@ module.exports = (env) => {
         },
         plugins: [
             new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, `./${env.development ? 'src' : 'dist'}/index.html`),
+                template: path.resolve(__dirname, './src/index.html'),
             }),
             new CleanWebpackPlugin(),
             new Dotenv({ path: `./.env.${environment}` }),
@@ -61,10 +61,6 @@ module.exports = (env) => {
             open: true,
             historyApiFallback: true,
             allowedHosts: ['localhost', '.merisaarinen.tech', 'merisaarinen-web.azurewebsites.net'],
-        },
-        externals: {
-            // You can use `false` or other values if you need something strange here,example will output `module.exports = {};`
-            'node:path': '{}',
         },
     };
 };
