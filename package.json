@@ -6,9 +6,8 @@
     "author": "Meri Saarinen",
     "license": "MIT",
     "scripts": {
-        "start": "webpack serve --env development --mode development --config webpack.config.js",
-        "start-prod": "webpack serve --env production --mode production --config webpack.config.js",
-        "build": "webpack --env production --mode production --config webpack.config.js",
+        "start": "webpack serve --open --env development --mode development --config webpack.dev.js",
+        "build": "webpack --config webpack.prod.js",
         "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
         "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
     },
@@ -38,8 +37,10 @@
         "react-vertical-timeline-component": "^3.5.2",
         "rsuite": "^5.0.0",
         "rsuite-table": "^5.0.0",
+        "serve": "^14.0.1",
         "styled-components": "^5.3.1",
-        "validator": "^13.7.0"
+        "validator": "^13.7.0",
+        "webpack-merge": "^5.8.0"
     },
     "devDependencies": {
         "@babel/cli": "^7.15.7",
