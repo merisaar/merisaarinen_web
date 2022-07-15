@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: merisaarinenwebimage.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_67ef49e734d74a1297e13108f7704fe8 }}/merisaarinenwebimage/web-application-release:${{ github.sha }}
+        tags: merisaarinenwebimage.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_67ef49e734d74a1297e13108f7704fe8 }}/merisaarinenwebimage/web-application-dev:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -45,7 +45,7 @@ jobs:
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'merisaarinen-portfolio'
+        app-name: 'webapplication-docker'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_37c965c27dc9457096696d5f4fc611e0 }}
-        images: 'merisaarinenwebimage.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_67ef49e734d74a1297e13108f7704fe8 }}/merisaarinenwebimage/web-application-release:${{ github.sha }}'
+        images: 'merisaarinenwebimage.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_67ef49e734d74a1297e13108f7704fe8 }}/merisaarinenwebimage/web-application-dev:${{ github.sha }}'
