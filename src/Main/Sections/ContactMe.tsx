@@ -92,9 +92,13 @@ const ContactContainer = () => {
             method: 'post',
             body: JSON.stringify(body),
             headers: { 'Content-Type': 'application/json' },
-        }).then(() => {
-            setEmailSent(true);
-        });
+        })
+            .then(() => {
+                setEmailSent(true);
+            })
+            .catch((error) => {
+                setSubmitError('There was an error sending the message. Please try again.');
+            });
     }
     return (
         <>
@@ -117,11 +121,14 @@ const ContactContainer = () => {
                     >
                         Message *
                     </Textarea>
-                    <Button onClick={() => sendMessage()} disabled={loading}>
-                        Send
-                        <ClipLoader color="#ffffff" loading={loading} size={25} />
-                    </Button>
-                    <span className="mbsc-err-msg">{submitError}</span>
+
+                    <div className="flex-column-container">
+                        <Button onClick={() => sendMessage()} disabled={loading}>
+                            Send
+                            <ClipLoader color="#ffffff" loading={loading} size={25} />
+                        </Button>
+                        <p className="message-error">{submitError}</p>
+                    </div>
                 </div>
             </Page>
         </>
