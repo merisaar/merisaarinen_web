@@ -88,7 +88,7 @@ const ContactContainer = () => {
     };
     function sendEmail() {
         const body = { message: message, name: name };
-        fetch(`${process.env.BASE_URL}/sendEmail`, {
+        fetch(`${process.env.BASE_URL_API}/sendEmail`, {
             method: 'post',
             body: JSON.stringify(body),
             headers: { 'Content-Type': 'application/json' },
