@@ -88,7 +88,12 @@ const ContactContainer = () => {
     };
     function sendEmail() {
         const body = { message: message, name: name };
-        fetch(`${process.env.BASE_URL_API}/sendEmail`, {
+        var base_env = process.env.BASE_URL_API;
+        if (base_env === undefined) {
+            setSubmitError('There was an error sending the message.');
+            return;
+        }
+        fetch(`${base_env}/sendEmail`, {
             method: 'post',
             body: JSON.stringify(body),
             headers: { 'Content-Type': 'application/json' },
