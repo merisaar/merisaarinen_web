@@ -92,16 +92,3 @@ export const WorkHistoryComponent = (): JSX.Element => {
         </div>
     );
 };
-
-export const ImageContainer = () => (
-    <div className="work-history-image-container">
-        <img className="half-image-circle grow" src="../Resources/startpage-image.jpg" alt="" />
-    </div>
-);
-
-// export const WorkHistory = () => (
-//     <div className="work-history-container">
-//         <div>
-//         </div>
-//     </div>
-// );

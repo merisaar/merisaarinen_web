@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { UnderWorkPage } from '../GeneralComponents/UnderWorkPage';
 import { NavigationBar } from '../GeneralComponents/NavigationBar';
 import { AboutMeComponent as AboutMe } from './Sections/AboutMe';
@@ -8,8 +8,13 @@ import { SocialMediaLinkContainer } from '../GeneralComponents/SocialMediaLinkCo
 import { ContactMeComponent } from './Sections/ContactMe';
 import { WorkHistoryComponent } from './Sections/WorkHistory';
 import { Breakpoint } from 'react-socks';
+import { StickyScrolling } from '../GeneralComponents/StickyScrolling';
 
 export const MainPage = (): JSX.Element => {
+    const aboutMeRef = useRef<HTMLDivElement>(null);
+    const homeRef = useRef<HTMLDivElement>(null);
+    StickyScrolling(homeRef, aboutMeRef);
+
     return (
         <>
             <Breakpoint className="content-container" small down>
@@ -17,8 +22,8 @@ export const MainPage = (): JSX.Element => {
                     <SocialMediaLinkContainer></SocialMediaLinkContainer>
                     <div className="information-container">
                         <Routes>
-                            <Route path="/home" element={<Home />}></Route>
-                            <Route path="/about" element={<AboutMe />}></Route>
+                            <Route path="/home" element={<Home refElement={homeRef} />}></Route>
+                            <Route path="/about" element={<AboutMe refElement={aboutMeRef} />}></Route>
                             <Route path="/workhistory" element={<WorkHistoryComponent />}></Route>
                             <Route path="/projects" element={<UnderWorkPage />}></Route>
                             <Route path="/contact" element={<ContactMeComponent />}></Route>
@@ -30,8 +35,8 @@ export const MainPage = (): JSX.Element => {
             </Breakpoint>
             <Breakpoint className="autoflow flex-flow-column" medium up>
                 <SocialMediaLinkContainer></SocialMediaLinkContainer>
-                <Home />
-                <AboutMe />
+                <Home refElement={homeRef} />
+                <AboutMe refElement={aboutMeRef} />
                 <WorkHistoryComponent />
                 <ContactMeComponent />
                 <NavigationBar />

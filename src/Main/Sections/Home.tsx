@@ -1,25 +1,26 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import '../../Styling/home.less';
 import { HalfImage } from './HalfImage';
 import { Breakpoint } from 'react-socks';
 import Particles from 'react-tsparticles';
+import image from '../../Resources/startpage-image.jpg';
 
-export const Home = (): JSX.Element => {
+export const Home = (props: { refElement: RefObject<HTMLDivElement> }): JSX.Element => {
     return (
         <>
             <Breakpoint className="autoflow justify-content-center align-items-center" small down>
                 <div className="main-home-container">
-                    <HalfImage imagePath="../Resources/startpage-image.jpg" />
+                    <HalfImage image={image} />
                 </div>
                 <HomeTextContainer />
             </Breakpoint>
             <Breakpoint className="section" medium up>
-                <div id="home" className="autoflow full-width home-container">
+                <div ref={props.refElement} id="home" className="autoflow full-width home-container">
                     <HomeTextContainer />
 
                     <div className="main-home-container">
-                        <HalfImage imagePath="../Resources/startpage-image.jpg" />
+                        <HalfImage image={image} />
                     </div>
                 </div>
             </Breakpoint>
@@ -41,7 +42,7 @@ const HomeTextContainer = (): JSX.Element => (
                     events: {
                         onHover: {
                             enable: true,
-                            mode: 'attract',
+                            mode: 'bubble',
                         },
                         resize: true,
                     },

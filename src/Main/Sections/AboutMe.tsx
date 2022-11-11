@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import '../../Styling/about-me.less';
 import { Breakpoint } from 'react-socks';
 import { Header } from '../../GeneralComponents/Header';
 import { Link } from 'react-scroll';
+import image from '../../Resources/startpage-image.jpg';
 
-export const AboutMeComponent = (): JSX.Element => {
+export const AboutMeComponent = (props: { refElement: RefObject<HTMLDivElement> }): JSX.Element => {
     return (
         <>
             <Breakpoint className="autoflow" small down>
@@ -13,7 +14,7 @@ export const AboutMeComponent = (): JSX.Element => {
                 <AboutMeTextContainer />
             </Breakpoint>
             <Breakpoint className="section main-padding" medium up>
-                <div className="autoflow" id="about">
+                <div ref={props.refElement} className="autoflow" id="about">
                     <div className="main-left-container">
                         <AboutMeTextContainer />
                     </div>
@@ -28,7 +29,7 @@ export const AboutMeComponent = (): JSX.Element => {
 
 export const ImageContainer = () => (
     <div className="about-me-image-container">
-        <img className="half-image-circle grow" src="../Resources/startpage-image.jpg" alt="" />
+        <img className="half-image-circle grow" src={image} alt="" />
         <p className="italic">This is me. Proudly and gently holding my degree so I don't break it.</p>
     </div>
 );
@@ -37,7 +38,7 @@ const AboutMeTextContainer = () => {
     return (
         <div className="about-me-container">
             <Header title="About me"></Header>
-            <p>
+            <div>
                 I love problem solving and finding solutions that fit best for the problem at hand. That is how I was
                 able to obtain my degree in Master of Science in Technology.
                 <br></br>
@@ -65,7 +66,7 @@ const AboutMeTextContainer = () => {
                         reach out <i className="fa fa-arrow-right"></i>
                     </Link>
                 </Breakpoint>
-            </p>
+            </div>
         </div>
     );
 };

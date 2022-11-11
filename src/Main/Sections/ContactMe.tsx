@@ -30,11 +30,7 @@ export const ContactMeComponent = (): JSX.Element => {
         </div>
     );
 };
-export const ImageContainer = () => (
-    <div className="contact-me-image-container">
-        <img className="half-image-circle grow" src="../Resources/startpage-image.jpg" alt="" />
-    </div>
-);
+
 const ContactContainer = () => {
     const [name, setName] = useState('');
     const [nameError, setNameError] = useState('');
@@ -92,13 +88,22 @@ const ContactContainer = () => {
     };
     function sendEmail() {
         const body = { message: message, name: name };
-        fetch(`${process.env.BASE_URL}/sendEmail`, {
+        var base_env = process.env.BASE_URL_API;
+        if (base_env === undefined) {
+            setSubmitError('There was an error sending the message.');
+            return;
+        }
+        fetch(`${base_env}/sendEmail`, {
             method: 'post',
             body: JSON.stringify(body),
             headers: { 'Content-Type': 'application/json' },
-        }).then(() => {
-            setEmailSent(true);
-        });
+        })
+            .then(() => {
+                setEmailSent(true);
+            })
+            .catch((error) => {
+                setSubmitError('There was an error sending the message. Please try again.');
+            });
     }
     return (
         <>
@@ -121,11 +126,14 @@ const ContactContainer = () => {
                     >
                         Message *
                     </Textarea>
-                    <Button onClick={() => sendMessage()} disabled={loading}>
-                        Send
-                        <ClipLoader color="#ffffff" loading={loading} size={25} />
-                    </Button>
-                    <span className="mbsc-err-msg">{submitError}</span>
+
+                    <div className="flex-column-container">
+                        <Button onClick={() => sendMessage()} disabled={loading}>
+                            Send
+                            <ClipLoader color="#ffffff" loading={loading} size={25} />
+                        </Button>
+                        <p className="message-error">{submitError}</p>
+                    </div>
                 </div>
             </Page>
         </>

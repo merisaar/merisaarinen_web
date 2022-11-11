@@ -8,7 +8,13 @@ COPY package.json ./
 RUN yarn install
 
 COPY . ./
-
+RUN yarn run build
 EXPOSE 3000
-EXPOSE 80
-CMD ["yarn", "run start"]
+# Install serve command for yarn package manager
+RUN yarn global add serve
+
+# Navigate to build folder
+WORKDIR /app/dist
+
+# Start the application
+CMD serve -p 3000 -s . 
