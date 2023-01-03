@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 import '../../Styling/about-me.less';
@@ -6,11 +7,13 @@ import { Header } from '../../GeneralComponents/Header';
 import { Link } from 'react-scroll';
 import image from '../../Resources/startpage-image.jpg';
 
+const imageText = "This is me. Proudly and gently holding my degree so I don't break it.";
+
 export const AboutMeComponent = (): JSX.Element => {
     return (
         <>
             <Breakpoint className="autoflow" small down>
-                <ImageContainer />
+                <ImageContainer text={imageText} />
                 <AboutMeTextContainer />
             </Breakpoint>
             <Breakpoint className="section main-padding" medium up>
@@ -19,7 +22,7 @@ export const AboutMeComponent = (): JSX.Element => {
                         <AboutMeTextContainer />
                     </div>
                     <div className="main-right-container">
-                        <ImageContainer />
+                        <ImageContainer text={imageText} />
                     </div>
                 </div>
             </Breakpoint>
@@ -27,10 +30,10 @@ export const AboutMeComponent = (): JSX.Element => {
     );
 };
 
-export const ImageContainer = () => (
+export const ImageContainer = (props: { text: string }) => (
     <div className="about-me-image-container">
         <img className="half-image-circle grow" src={image} alt="" />
-        <p className="italic">This is me. Proudly and gently holding my degree so I don't break it.</p>
+        <p className="italic">{props.text}</p>
     </div>
 );
 

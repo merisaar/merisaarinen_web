@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 interface HalfImageProps {
-    image: HTMLImageElement;
+    image: string;
 }
 
 export const HalfImage = ({ image }: HalfImageProps): JSX.Element => {
@@ -12,7 +12,7 @@ export const HalfImage = ({ image }: HalfImageProps): JSX.Element => {
             style={loaded ? {} : { display: 'none' }}
             src={image}
             onLoad={() => setLoaded(true)}
-            alt=""
+            alt="me"
         />
     );
 };

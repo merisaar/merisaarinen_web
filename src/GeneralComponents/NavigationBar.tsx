@@ -3,7 +3,7 @@ import '../Styling/navigation-bar.less';
 import { useLocation } from 'react-router-dom';
 import { Breakpoint } from 'react-socks';
 import { Nav, Navbar } from 'rsuite';
-import { BiHomeAlt, BiUser, BiHistory, BiChalkboard, BiInfoCircle } from 'react-icons/bi';
+import { BiHomeAlt, BiUser, BiHistory, BiInfoCircle } from 'react-icons/bi';
 import { Link } from 'react-scroll';
 import { HashLink } from 'react-router-hash-link';
 
@@ -58,28 +58,40 @@ interface INavItemProps {
     linkName: string;
     icon?: JSX.Element;
 }
-const NavItem = (prop: INavItemProps): JSX.Element => {
+export const NavItem = (props: INavItemProps): JSX.Element => {
     return (
         <>
             <Breakpoint small down>
-                <HashLink to={`/${prop.linkName}`}>
-                    {prop.icon}
-                    <li className={prop.isActive ? 'nav-button-active' : ''}>
-                        <p>{prop.title}</p>
-                    </li>
-                </HashLink>
+                {GetHashLink(props)}
             </Breakpoint>
             <Breakpoint medium up>
-                <Link activeClass="active" smooth spy to={prop.linkName}>
-                    <li>
-                        <p>{prop.title}</p>
-                    </li>
-                </Link>
+                {GetLink(props.title)}
             </Breakpoint>
         </>
     );
+
+    function GetLink(title: string) {
+        return (
+            <Link activeClass="active" smooth spy to={props.linkName}>
+                <li>
+                    <p>{title}</p>
+                </li>
+            </Link>
+        );
+    }
+
+    function GetHashLink(props: INavItemProps) {
+        return (
+            <HashLink to={`/${props.linkName}`}>
+                {props.icon}
+                <li className={props.isActive ? 'nav-button-active' : ''}>
+                    <p>{props.title}</p>
+                </li>
+            </HashLink>
+        );
+    }
 };
-const NavigationItems = (
+export const NavigationItems = (
     homeComponent: { title: string; link: string },
     activeNav: string,
     aboutMeComponent: { title: string; link: string },

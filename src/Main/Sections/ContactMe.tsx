@@ -88,7 +88,7 @@ const ContactContainer = () => {
     };
     function sendEmail() {
         const body = { message: message, name: name };
-        var base_env = process.env.BASE_URL_API;
+        const base_env = process.env.BASE_URL_API;
         if (base_env === undefined) {
             setSubmitError('There was an error sending the message.');
             return;
@@ -101,7 +101,7 @@ const ContactContainer = () => {
             .then(() => {
                 setEmailSent(true);
             })
-            .catch((error) => {
+            .catch(() => {
                 setSubmitError('There was an error sending the message. Please try again.');
             });
     }

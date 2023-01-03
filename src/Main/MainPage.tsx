@@ -20,7 +20,7 @@ export const MainPage = (): JSX.Element => {
                             <Route path="/home" element={<Home />}></Route>
                             <Route path="/about" element={<AboutMe />}></Route>
                             <Route path="/workhistory" element={<WorkHistoryComponent />}></Route>
-                            <Route path="/projects" element={<UnderWorkPage />}></Route>
+                            <Route path="/projects" element={<UnderWorkPage title="UNDER WORK" />}></Route>
                             <Route path="/contact" element={<ContactMeComponent />}></Route>
                             <Route path="*" element={<Navigate to="/home" replace />} />
                         </Routes>

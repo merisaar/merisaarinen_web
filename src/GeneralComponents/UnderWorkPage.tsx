@@ -5,7 +5,7 @@ import { HalfImage } from '../Main/Sections/HalfImage';
 import { Breakpoint } from 'react-socks';
 import image from '../Resources/startpage-image.jpg';
 
-export const UnderWorkPage = (): JSX.Element => {
+export const UnderWorkPage = (props: { title: string }): JSX.Element => {
     return (
         <>
             <div className="main-left-container startpage-column-container">
@@ -16,8 +16,8 @@ export const UnderWorkPage = (): JSX.Element => {
                         </a>
                     </Breakpoint>
                     <div className="middle">
-                        <h1>UNDER WORK</h1>
-                        <img src={robot} alt=""></img>
+                        <h1>{props.title}</h1>
+                        <img src={robot} alt="robot repairing page title"></img>
                     </div>
                 </div>
             </div>

@@ -10,25 +10,28 @@ export const Home = (): JSX.Element => {
     return (
         <>
             <Breakpoint className="autoflow justify-content-center align-items-center" small down>
-                <div className="main-home-container">
-                    <HalfImage image={image} />
-                </div>
+                <HalfImageContainer />
                 <HomeTextContainer />
             </Breakpoint>
             <Breakpoint className="section" medium up>
                 <div id="home" className="autoflow full-width home-container">
                     <HomeTextContainer />
-
-                    <div className="main-home-container">
-                        <HalfImage image={image} />
-                    </div>
+                    <HalfImageContainer />
                 </div>
             </Breakpoint>
         </>
     );
+
+    function HalfImageContainer() {
+        return (
+            <div className="main-home-container">
+                <HalfImage image={image} />
+            </div>
+        );
+    }
 };
 
-const HomeTextContainer = (): JSX.Element => (
+export const HomeTextContainer = (): JSX.Element => (
     <div>
         <Particles
             options={{
